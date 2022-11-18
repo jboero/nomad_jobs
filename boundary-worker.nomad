@@ -47,7 +47,7 @@ job "boundary-worker" {
 
       }
       artifact {
-         source     = "https://releases.hashicorp.com/boundary/${var.boundary_version}/boundary_${var.boundary_version}_linux_amd64.zip"
+         source     = "https://releases.hashicorp.com/boundary/${var.boundary_version}/boundary_${var.boundary_version}_linux_${attr.cpu.arch}.zip"
         destination = "./tmp/"
         options {
           checksum = "sha256:${var.boundary_checksum}"
